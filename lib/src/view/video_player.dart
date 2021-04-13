@@ -365,7 +365,7 @@ class _RefinedVideoPlayerState extends State<RefinedVideoPlayer>
               return GestureDetector(
                 child: Text(
                   widget.uiModifier.right.speedList[index] == 1
-                      ? "原速"
+                      ? "Speed"
                       : "X${widget.uiModifier.right.speedList[index].toStringAsFixed(1)}",
                   style: speed == widget.uiModifier.right.speedList[index]
                       ? widget.uiModifier.right.selectedTextStyle.copyWith(
@@ -516,7 +516,7 @@ class _RefinedVideoPlayerState extends State<RefinedVideoPlayer>
                     Text(
                       isFullScreen && state == RVPState.BUFFERING
                           ? widget.uiModifier.bottom.loadingText ??
-                              "Loading... =ω="
+                              "Loading"
                           : "${dur2Str(position)}/"
                               "${dur2Str(widget.controller.duration.value)}",
                       style: TextStyle(
@@ -573,7 +573,7 @@ class _RefinedVideoPlayerState extends State<RefinedVideoPlayer>
       valueListenable: widget.controller.isFullScreen,
       builder: (context, isFullScreen, child) {
         return Container(
-          width: MediaQuery.of(context).size.width,
+          width: isFullScreen ?  MediaQuery.of(context).size.width : MediaQuery.of(context).size.width - 50,
           height: widget.uiModifier.bottom.height ?? (isFullScreen ? 80 : 70),
           decoration: widget.uiModifier.bottom.decoration,
           child: Column(
@@ -689,7 +689,7 @@ class _RefinedVideoPlayerState extends State<RefinedVideoPlayer>
       return ValueListenableBuilder<double>(
         valueListenable: widget.controller.brightness,
         builder: (context, brightness, child) {
-          return buildIndicator("亮度", brightness);
+          return buildIndicator("Brighntness", brightness);
         },
       );
     }
@@ -698,7 +698,7 @@ class _RefinedVideoPlayerState extends State<RefinedVideoPlayer>
       return ValueListenableBuilder<double>(
         valueListenable: widget.controller.volume,
         builder: (context, volume, child) {
-          return buildIndicator("音量", volume);
+          return buildIndicator("Volume", volume);
         },
       );
     }
