@@ -44,11 +44,11 @@ class BottomAreaConfigs {
       Icons.arrow_circle_down_outlined,
       color: Colors.white,
     ),
-    this.loadingText = "Loading... =ω=",
+    this.loadingText = "Loading",
     this.loadingWidget,
     this.sliderThemeData,
     this.sliderWidget,
-    this.speedText = "倍速",
+    this.speedText = "Normal",
     this.speedTextStyle = RVPDefaultModifierConfigs.unSelectedTextStyle,
     this.fullScreenIcon = const Icon(
       Icons.fullscreen,
