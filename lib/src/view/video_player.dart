@@ -573,19 +573,19 @@ class _RefinedVideoPlayerState extends State<RefinedVideoPlayer>
       valueListenable: widget.controller.isFullScreen,
       builder: (context, isFullScreen, child) {
         return Container(
-          width: isFullScreen ?  MediaQuery.of(context).size.width : MediaQuery.of(context).size.width - 50,
-          height: widget.uiModifier.bottom.height ?? (isFullScreen ? 80 : 70),
+          width: MediaQuery.of(context).size.width ,
+          height: widget.uiModifier.bottom.height ?? (isFullScreen ? 80 : 80),
           decoration: widget.uiModifier.bottom.decoration,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              isFullScreen ? buildProgressBar(isFullScreen) : Container(),
+              buildProgressBar(isFullScreen),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   buildPlayPauseButton(),
-                  isFullScreen ? Container() : buildProgressBar(isFullScreen),
+                 // isFullScreen ? Container() : buildProgressBar(isFullScreen),
                   buildProgressLabel(isFullScreen),
                   buildDivider(isFullScreen),
                   buildSpeedButton(isFullScreen),
